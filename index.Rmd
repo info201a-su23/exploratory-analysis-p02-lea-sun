@@ -2,63 +2,96 @@
 title: "Exploratory Analysis"
 output: html_document
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# load ALL necessary libraries
+library(tidyverse)
+library(stringr)
+library(knitr)
+
+# load dataset
+depressionrates <- read.csv("/Users/leannasun/Downloads/depressionrates.csv", header=TRUE, stringsAsFactors=FALSE) 
+# source all R files; this runs each file from top to bottom, storing all our
+# variables so that we can use them later in this index.Rmd file.
+# HINT: Remember to set your working directory to the folder this file is in!
+source('summary_info.R')
+source('agg_table.R')
+```
 
 ## Project title
-
-Give your project a concise, interesting title that summarizes the entirety of your project
+*Mental Health Across Borders: Analyzing Depression by Country and Age Group*
 
 ### Authors
-
-Names of your team members
+• Simran Kaur, *sk04@uw.edu*   
+• Leanna Sun, *leasun@uw.edu*  
+• Susruthi Karanam, *susruthi@uw.edu*  
+• Jullie Jasminez, *jullie24@uw.edu*
 
 ### Date
-
-Winter 2022
+August 4, 2023  
+Summer 2023
 
 ### Abstract
-
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our main question is to investigate the prevalence of depression across different countries and age groups. This question is important because mental health is a critical global issue, and understanding the variations in depression rates can aid in case-by-case treatments and mental health policies. To address this question, we will analyze a comprehensive dataset that records depression rates by country and age group, aiming to uncover patterns and trends that contribute to a better understanding of the mental health landscape worldwide.
 
 ### Keywords
-
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+Keywords: *"mental health", "depression", "depression by age", "world data", "adolescence", "global health"*
 
 ### Introduction  
-
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+The study of the correlation between mental health issues such as depression and age. The data represents the number of individuals who struggle with depression and the effects of their age impacting their health. It is significant to the study to ask specifically when participants first felt too anxious or depressed and where it affected their daily activities. By considering when they first felt depression, there can be more accuracy. It is important to address concerns such as, Does your country of residence impact your mental health?, Is there an increase of individuals who face mental health issues throughout the years?, and Are there any common age groups with similar percentage of individuals with depression?. The data is gathered in accordance with a region of residence, and it is important that we take into account if the region is associated with the data found. The questions help understand the complex interplay between mental health and age along with geographical location. By exploring the impact of country of residence, it will be easier to identify trends in mental health over time and discover common situations that affect depression. These questions are significant in the analysis to help determine patterns and trends of the data.
 
 ### Related Work  
-
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+Our topic of mental health focuses on addressing mental health disorders worldwide by age group, which is important to look at because mental health disorders can have different catalysts, symptoms, treatments, and effects depending on general age group, and a comprehensive understanding can help us better research tailored approaches and global health policies. According to the World Health Organization, "Globally, it is estimated that 1 in 7 (14%) 10–19 year-olds experience mental health conditions (1), yet these remain largely unrecognized and untreated" (2021). Adolescence is a unique time for people growing up, as individuals can be vulnerable and exposed to social, physical, and emotional changes. These changes can also depend on environment and lifestyle, which varies area by area, country by country. Additionally, *Time Magazine* reports that mental illness might accelerate the aging process based on their findings (2023). Researchers collected data suggesting that those with mental health disorders may age their cells more quickly than those without such conditions at a cellular level. The study suggests a possible connection between biological aging and mental disease, stressing the significance of addressing mental health as a component that may affect general health and wellbeing. Furthermore, a study from Nature's *Molecular Psychiatry* journal was conducted in order to determine when mental diseases commonly manifest in people from various countries across the world (2021). The study discovered potential differences in the age of onset mental health disorders internationally, which helps to provide a more thorough picture of global mental health trends. With the goal of studying mental health disorders worldwide by age group, we can better understand how this is a multifaceted topic with complicated, tailored implications. By recognizing the unique challenges and opportunities presented at different life stages, we can work towards comprehensive mental health strategies that foster well-being, reduce stigma, and enhance the overall quality of life for individuals across diverse populations. 
 
 ### The Dataset
-
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+3a.
+We found the data on data.world. Specifically using this [link](https://data.world/vizzup/mental-health-depression-disorder-data).  
+3b.
+The data was collected by Saloni Dattani, Lucas Rodés-Guirao, Hannah Ritchie, and Max Roser.  
+3c.
+The data was collected and generated using statistical methods on top of surveys and screening data from mental health patients worldwide.  
+3d.
+This data was collected to reduce the burden of mental illness worldwide by providing reliable data to get more attention and support to the issue and those suffering with the illnesses.  
+3e.
+There are 6,468 rows in the data.  
+3f.
+There are 10 columns in the data.  
+3g.
+When working with this data, I think it's important to consider the power of the data and how it can be used to help those suffering with mental illnesses. It's also important to consider how the data was collected and if it was collected in a way that was ethical and respectful to those who participated in the surveys.  
+3h.
+Some possible limitations of this data is that it can sometimes be hard for individuals to reach out with their mental health issues and seek help. This can lead to a lack of data and information about the issue. Especially in third-world countries where mental health is often given lesser importance and not as stressed growing up, many people might not even realize they have any issues and therefore not bring anything up to a mental health professional. This can cause the data to be skewed and not truly representative of the population. Another limitation is that the data is collected from surveys and screening data, which can be very subjective based on what the individual classifies as a mental health issue (or what their country classifies as one). This can lead to a lack of consistency if someone reports that they don't have a mental health issue because they just don't think it counts as one, whereas someone else with the exact same symptoms might report that they do have one. A last limitation or problem with this data is that different doctors might have different experiences in detecting mental health disorders and might misdiagnose a patient by accident.
 
 ### Implications
-
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+Understanding the variations in mental health disorders across age groups holds significant implications for technologists, designers, and policymakers. Technologists can develop age-appropriate digital platforms and tools to support mental health, utilizing data analytics and Al for early detection and personalized interventions. Designers can create empathetic and user-centric interfaces, considering cultural sensitivities and regional differences to enhance accessibility and reduce stigma. Policymakers can use the insights to design evidence-based mental health policies that allocate resources effectively, catering to the specific needs of adolescents, adults, and the elderly. Strengthening mental health services in schools, workplaces, and geriatric care centers, and integrating mental health support into primary healthcare, can lead to improved mental health services, reduced stigma, and enhanced well-being across diverse populations.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+Throughout this project there will be many contributions and challenges that will increase the difficulty of having a correct analysis. Ensuring the data quality is accurate may be a challenge and there may be limitations in certain age groups which can lead to inaccurate data representation. Along with the difficulty of collecting information on mental health issues with different countries and regions. Due to the difference and stigma towards mental health, the dataset may not account for the different variations of mental health issues therefore leading to inaccurate conclusions. Another limitation and challenge throughout this project may be the confounding variables. Identifying a corelating between age and mental health is not simple and there are many confounding variables within this study including economic status, cultural differences, along with more lifestyle factors. Due to these confounding variables, there are many limitations to accurately analyzing the dataset. Generalization must be avoided to ensure that the results are not too simplified towards a certain demographic and population.
+
+### Citations 
+Kluger, J. (2023, March 28). Mental illness may 
+speed up the aging process, study finds. Time. https://time.com/6266565mental-illness-aging-speed-up/  
+
+Solmi, M., Radua, J., Olivola, M., Croce, E., Soardo, L., Salazar de Pablo, G., Il Shin, J., Kirkbride, J. B., Jones, P., Kim, J. H., Kim, J. Y., Carvalho, A. F., Seeman, M. V., Correll, C. U., &amp; Fusar-Poli, P. (2021). Age at onset of mental disorders worldwide: Large-scale meta-analysis of&nbsp;192 epidemiological studies. Molecular Psychiatry, 27(1), 281–295. https://doi.org/10.1038/s41380-021-01161-7  
+
+World Health Organization. (n.d.). Mental health of adolescents. World Health Organization. https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health 
 
 ### Summary Information
-
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+In our exploratory analysis of the mental health dataset by age and country, we computed the prevalence of depression in different locations and age groups. First, we found that the dataset contains records from **`r summary_info$num_unique_locations`** unique locations and countries to view the geographical diversity of the dataset. Second, we found that the data ranges from **`r summary_info$year_range`**, providing insight into depression trends over a wide range of years. Next, we found that the dataset includes individuals from diverse age groups, ranging from **`r summary_info$age_range`** years old. We then found the location with the highest proportion of depression across all ages, which turned out to be **`r summary_info$highest_rate_location`**. Lastly, our analysis revealed that the age group with the highest proportion of depression is **`r summary_info$highest_age_group`**. These values and findings offer valuable insights into the mental health landscape and can serve as a foundation for further in-depth analysis of depression rates and potential mental health interventions and policies.
 
 ### Table
+```{r agg_table}
+table_caption <- paste("Mean Depression Rates of All Ages by Country ")
 
-Include a table of aggregate information
+knitr::kable(country_means,
+             col.names = c('Country',
+                           'Mean Depression Rate'),
+             caption = table_caption)
+```
 
-Describe why you included the table and what information it reveals
+Our aggregated table organizes a summary of the mean depression rates for each country in the dataset. By grouping the data by country and calculating the mean depression rate for each location, the table shows a clear picture of how depression prevalence varies across different countries. This can provide starting points for choosing countries to look into by age group, depending on if we want to analyze countries with higher rates and looking into age group rates there, or at countries with lower rates to help identify factors that may result in such differences. 
+
+The table reveals valuable information about the mental health landscape across various nations. Specifically, it allows us to identify countries with higher or lower mean depression rates, which can then help us decide what countries to look into and depression rates among age groups depending on questions we have about the data and how variables compare. Our graphs below show how the table can lead us to look into more specific values within age groups of different countries.
 
 ### Chart 1
 
@@ -68,7 +101,7 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
 ### Chart 2
