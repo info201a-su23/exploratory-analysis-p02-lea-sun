@@ -1,0 +1,32 @@
+---
+title: "Scatter plot"
+output: html_document
+date: "2023-08-04"
+---
+
+#use dplyr to arrange data in desired order
+library(dplyr)
+
+data <- read.csv("depressionrates.csv")
+  arrange(Age_Group)
+
+# create a scatter plot to recognize relationship between age group and country of geographical residence
+
+ggplot(data, aes(x = Country, y = Age_Group, size = Count, color = Count)) +
+geom_Point () +
+
+ggtitle(title = "Relationship between Age Groups and Country of Residence", 
+  x = "Country",
+  y = "Age Group",
+  size = "Count"
+  color = " Count") +
+  
+scale_size_continous(range= c(x, y)) 
+# the range 
+scale_color_viridisLite_c() + 
+# color scale
+theme_minimal() +
+theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+#rotate the x-asis so it is more visible 
+  
+  
