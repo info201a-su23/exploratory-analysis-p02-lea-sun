@@ -8,3 +8,5 @@ ggplot() +
   labs(x = "Population", y = "Prevalence of Depression (%)") +
   ggtitle("Prevalence of Depression in Different Populations") +
   theme_minimal()
+print(warnings())
+print(plot)
