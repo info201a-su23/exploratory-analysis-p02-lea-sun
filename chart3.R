@@ -1,8 +1,5 @@
-install.packages("ggplot2")
 library("ggplot2")
-install.packages("tidyverse")
 library("tidyverse")
-install.packages("dplyr")
 library("dplyr")
 
 depression_rates_file <- read.csv("/Users/Susruthi/OneDrive/Desktop/depressionrates.csv")
