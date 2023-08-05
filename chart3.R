@@ -2,9 +2,7 @@ library("ggplot2")
 library("tidyverse")
 library("dplyr")
 
-depression_rates_file <- read.csv("/Users/Susruthi/OneDrive/Desktop/depressionrates.csv")
-
-usa_data <- depression_rates_file %>%
+usa_data <- depressionrates %>%
   dplyr::filter(entity == "United States")
 
 usa_depression_rates <- usa_data %>%
