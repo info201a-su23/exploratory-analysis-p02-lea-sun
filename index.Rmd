@@ -115,7 +115,7 @@ For instance, the United States, representing North America, has a higher preval
 
 ### Chart 3
 
-```{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart3.R")}
 chart3 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart3.R")
 ```
 
