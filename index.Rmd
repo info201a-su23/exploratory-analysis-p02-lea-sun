@@ -11,7 +11,7 @@ library(stringr)
 library(knitr)
 
 # load dataset
-depressionrates <- read.csv("/Users/leannasun/Downloads/depressionrates.csv", header=TRUE, stringsAsFactors=FALSE) 
+depressionrates <- read.csv("depressionrates.csv", header=TRUE, stringsAsFactors=FALSE) 
 # source all R files; this runs each file from top to bottom, storing all our
 # variables so that we can use them later in this index.Rmd file.
 # HINT: Remember to set your working directory to the folder this file is in!
@@ -107,7 +107,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ### Chart 2
 
 ```{r, echo = FALSE, code = readLines("chart2_example.R")}
-chart2 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart2_example.R")
+chart2 <- source("chart2_example.R")
 ```
 
 I chose to create a bar chart as it is very easy to interpret and it quickly highlights what the topic is about and the visual it presents. The bar chart represents the estimated prevalence of depression in the United States, Albania, Thailand, Algeria, Paraguay, & Guam. The countries I have chosen represent one continent. I did this so that the results will be on a broader spectrum rather than places close to each other. The information in the bar graph are data gathered from 2017 and falls under the all-ages category. 
@@ -116,7 +116,7 @@ For instance, the United States, representing North America, has a higher preval
 ### Chart 3
 
 ```{r, echo = FALSE, code = readLines("chart3.R")}
-chart3 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart3.R")
+chart3 <- source("chart3.R")
 ```
 
 I chose to create a line chart because it is easy to view and understand 
