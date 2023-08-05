@@ -109,8 +109,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```{r, echo = FALSE, code = readLines("chart2_example.R")}
 chart2 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart2_example.R")
 ```
-
-Describe why you chose this chart and what information it reveals
+I chose to create a bar chart as it is very easy to interpret and it quickly highlights what the topic is about and the visual it presents. The bar chart represents the estimated prevalence of different mental illnesses worldwide in the year 2019. The data is based on a combination of representative surveys, medical data, and statistical modeling, encompassing both diagnosed and undiagnosed cases. The chart displays five mental illnesses, each represented by a colored bar indicating its respective share within the population. Schizophrenia has the lowest estimated prevalence at 0.3%, followed by depressive disorder at 3.4%, anxiety disorder at 3.8%, bipolar disorder at 0.5%, and eating disorders at 0.2%. These figures provide valuable insight into the global burden of mental health conditions and highlight the importance of addressing mental health issues on a global scale.
 
 ### Chart 3
 
