@@ -42,7 +42,14 @@ summary_info$highest_age_group <- depressionrates %>%
   which.max() %>%
   names()
 
-summary_info$highest_age_group <- gsub("_", " ",summary_info$highest_age_group)
+highest_age_group_updated <- gsub("_", " ",highest_age_group)
+
+
+
+
+
+
+
 
 
 
