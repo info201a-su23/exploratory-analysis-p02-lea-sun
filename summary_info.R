@@ -36,13 +36,23 @@ summary_info$highest_rate_location <- depressionrates %>%
   pull(entity)
 
 # Find age group with highest proportion of depression
-summary_info$highest_age_group <- depressionrates %>%
-  select(matches("^\\d")) %>%
+age_group_cols <- dplyr::select(depressionrates, X20_24_years_old, 
+                                X10_14_years_old, X70_years_old, 
+                                X30_34_years_old, X15_19_years_old,
+                                X25_29_years_old,  X50_69_years_old,
+                                X15_49_years_old)
+
+updated_col_names <- gsub("^X", "", names(age_group_cols))
+
+names(age_group_cols) <- updated_col_names
+
+highest_age_group <- age_group_cols%>%
   colMeans(na.rm = TRUE) %>%
   which.max() %>%
   names()
 
-summary_info$highest_age_group <- gsub("_", " ",summary_info$highest_age_group)
+summary_info$highest_age_group_new <- gsub("_", " ", highest_age_group)
+
 
 
 

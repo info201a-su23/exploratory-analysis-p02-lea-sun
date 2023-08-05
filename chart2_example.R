@@ -1,10 +1,13 @@
 library(ggplot2)
 
-x_values <- c('Children (3⁠–17 years)', 'Adults (18+ years)', 'Males (18+ years)', 'Females (18+ years)')
-y_values <- c(3.2, 7.1, 5.3, 8.7)
+countries <- c("United States", "Albania", "Thailand", "Algeria", "Paraguay", "Guam")
+prevalence <- c(5.09, 2.61, 3.81, 3.69, 2.84, 3.65)
 
-ggplot() +
-  geom_bar(aes(x = x_values, y = y_values), stat = 'identity', fill = 'blue') +
-  labs(x = "Population", y = "Prevalence of Depression (%)") +
-  ggtitle("Prevalence of Depression in Different Populations") +
-  theme_minimal()
+data <- data.frame(Country = countries, Prevalence = prevalence)
+
+ggplot(data, aes(x = Country, y = Prevalence, fill = Country)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Country", y = "Prevalence of Depression (%)") +
+  ggtitle("Prevalence of Depression in Different Countries (2017)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))

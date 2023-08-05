@@ -11,7 +11,7 @@ library(stringr)
 library(knitr)
 
 # load dataset
-depressionrates <- read.csv("/Users/leannasun/Downloads/depressionrates.csv", header=TRUE, stringsAsFactors=FALSE) 
+depressionrates <- read.csv("depressionrates.csv", header=TRUE, stringsAsFactors=FALSE) 
 # source all R files; this runs each file from top to bottom, storing all our
 # variables so that we can use them later in this index.Rmd file.
 # HINT: Remember to set your working directory to the folder this file is in!
@@ -77,7 +77,7 @@ Solmi, M., Radua, J., Olivola, M., Croce, E., Soardo, L., Salazar de Pablo, G., 
 World Health Organization. (n.d.). Mental health of adolescents. World Health Organization. https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health 
 
 ### Summary Information
-In our exploratory analysis of the mental health dataset by age and country, we computed the prevalence of depression in different locations and age groups. First, we found that the dataset contains records from **`r summary_info$num_unique_locations`** unique locations and countries to view the geographical diversity of the dataset. Second, we found that the data ranges from **`r summary_info$year_range`**, providing insight into depression trends over a wide range of years. Next, we found that the dataset includes individuals from diverse age groups, ranging from **`r summary_info$age_range`** years old. We then found the location with the highest proportion of depression across all ages, which turned out to be **`r summary_info$highest_rate_location`**. Lastly, our analysis revealed that the age group with the highest proportion of depression is **`r summary_info$highest_age_group`**. These values and findings offer valuable insights into the mental health landscape and can serve as a foundation for further in-depth analysis of depression rates and potential mental health interventions and policies.
+In our exploratory analysis of the mental health dataset by age and country, we computed the prevalence of depression in different locations and age groups. First, we found that the dataset contains records from **`r summary_info$num_unique_locations`** unique locations and countries to view the geographical diversity of the dataset. Second, we found that the data ranges from **`r summary_info$year_range`**, providing insight into depression trends over a wide range of years. Next, we found that the dataset includes individuals from diverse age groups, ranging from **`r summary_info$age_range`** years old. We then found the location with the highest proportion of depression across all ages, which turned out to be **`r summary_info$highest_rate_location`**. Lastly, our analysis revealed that the age group with the highest proportion of depression is **`r summary_info$highest_age_group_new`**. These values and findings offer valuable insights into the mental health landscape and can serve as a foundation for further in-depth analysis of depression rates and potential mental health interventions and policies.
 
 ### Table
 ```{r agg_table}
@@ -108,12 +108,23 @@ I chose to do an chart more specifically an scatter plot to describe the correla
 
 ### Chart 2
 
-Include a chart
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
+chart2 <- source("chart2_example.R")
+```
 
-Describe why you chose this chart and what information it reveals
+I chose to create a bar chart as it is very easy to interpret and it quickly highlights what the topic is about and the visual it presents. The bar chart represents the estimated prevalence of depression in the United States, Albania, Thailand, Algeria, Paraguay, & Guam. The countries I have chosen represent one continent. I did this so that the results will be on a broader spectrum rather than places close to each other. The information in the bar graph are data gathered from 2017 and falls under the all-ages category. 
+For instance, the United States, representing North America, has a higher prevalence of depression at 5.09%. In contrast, Albania, representing Europe, has a lower prevalence at 2.61%. Thailand, representing Asia, falls in between with a prevalence of 3.81%. Algeria, representing Africa, also shows a moderate prevalence of 3.69%. Paraguay, representing South America, reports a prevalence of 2.84%. Lastly, Guam, representing Oceania, has a prevalence of 3.65%.
 
 ### Chart 3
 
-Include a chart
+```{r, echo = FALSE, code = readLines("chart3.R")}
+chart3 <- source("chart3.R")
+```
 
-Describe why you chose this chart and what information it reveals
+I chose to create a line chart because it is easy to view and understand 
+and it is great at showing changes over time. This line chart shows the
+depression rates for different age groups in the United States over the
+years from 1990 to 2017. Some trends that it reveals is how depression 
+rates for teenagers has dramatically increased in the 2000s whereas they 
+stayed roughly the same or decreased for adults under 35.
+
