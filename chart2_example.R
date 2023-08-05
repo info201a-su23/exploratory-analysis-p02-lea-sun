@@ -1,10 +1,13 @@
 library(ggplot2)
 
-x_values <- c('Children (3⁠–17 years)', 'Adults (18+ years)', 'Males (18+ years)', 'Females (18+ years)')
-y_values <- c(3.2, 7.1, 5.3, 8.7)
+disorders <- c("Schizophrenia", "Depressive Disorder", "Anxiety Disorder", "Bipolar Disorder", "Eating Disorders")
+prevalence <- c(0.3, 3.4, 3.8, 0.5, 0.2)
 
-ggplot() +
-  geom_bar(aes(x = x_values, y = y_values), stat = 'identity', fill = 'blue') +
-  labs(x = "Population", y = "Prevalence of Depression (%)") +
-  ggtitle("Prevalence of Depression in Different Populations") +
-  theme_minimal()
+data <- data.frame(Disorder = disorders, Prevalence = prevalence)
+
+ggplot(data, aes(x = Disorder, y = Prevalence, fill = Disorder)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Mental Health Disorders", y = "Prevalence (%)") +
+  ggtitle("Prevalence of Mental Health Disorders Worldwide") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
