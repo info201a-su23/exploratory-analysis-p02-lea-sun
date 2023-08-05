@@ -113,6 +113,14 @@ I chose to create a bar chart as it is very easy to interpret and it quickly hig
 
 ### Chart 3
 
-Include a chart
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
+chart3 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart3.R")
+```
 
-Describe why you chose this chart and what information it reveals
+I chose to create a line chart because it is easy to view and understand 
+and it is great at showing changes over time. This line chart shows the
+depression rates for different age groups in the United States over the
+years from 1990 to 2017. Some trends that it reveals is how depression 
+rates for teenagers has dramatically increased in the 2000s whereas they 
+stayed roughly the same or decreased for adults under 35.
+
