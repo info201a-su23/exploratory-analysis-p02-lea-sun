@@ -108,8 +108,6 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ```{r, echo = FALSE, code = readLines("chart2_example.R")}
 chart2 <- source("https://github.com/info201a-su23/exploratory-analysis-p02-lea-sun/blob/main/chart2_example.R")
-
-plot
 ```
 
 Describe why you chose this chart and what information it reveals
