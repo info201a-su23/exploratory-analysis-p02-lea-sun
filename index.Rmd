@@ -101,6 +101,8 @@ Describe why you chose this chart and what information it reveals
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
+I chose to do an chart more specifically an scatter plot to describe the correlation between age group and country of residece. This scatter plot repersents the depression reates and common rates between depression rates and an age group. Comparing the area of residence and common depression rates in an age group are vital comparisions to determining that common factors and narrow out the specialties on depression rates.
+
 ```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
