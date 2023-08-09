@@ -96,12 +96,11 @@ The table reveals valuable information about the mental health landscape across 
 ### Chart 1
 
 ```{r, echo = FALSE, code = readLines("chart1_example.R")}
-chart1 < sourse("chart1_example.R")
-
-
-I chose to do an chart more specifically an scatter plot to describe the correlation between age group and countries United States and Afghanistan. This scatter plot represents the depression reates and common rates between depression rates and an age group. The age group I chose was 20 to 24 year olds due to the high difference between countries. Comparing the area of residence and common depression rates in an age group are vital comparisons to determining that common factors and narrow out the specialties on depression rates.
+chart1 < source("chart1_example.R")
 
 ```
+
+I chose to do an chart more specifically an scatter plot to describe the correlation between age group and countries United States and Afghanistan. This scatter plot represents the depression reates and common rates between depression rates and an age group. The age group I chose was 20 to 24 year olds due to the high difference between countries. Comparing the area of residence and common depression rates in an age group are vital comparisons to determining that common factors and narrow out the specialties on depression rates.
 
 ### Chart 2
 
