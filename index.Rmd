@@ -97,10 +97,9 @@ The table reveals valuable information about the mental health landscape across 
 
 ```{r, echo = FALSE, code = readLines("chart1_example.R")}
 chart1 < source("chart1_example.R")
-
 ```
 
-I chose to do an chart more specifically an scatter plot to describe the correlation between age group and countries United States and Afghanistan. This scatter plot represents the depression reates and common rates between depression rates and an age group. The age group I chose was 20 to 24 year olds due to the high difference between countries. Comparing the area of residence and common depression rates in an age group are vital comparisons to determining that common factors and narrow out the specialties on depression rates.
+I chose to do a bar plot that represents that depression rates between age groups 10 to 14 year old, 30-34 year old, and then 70 year old. I did this because I was curious on how depression affects different age groups in the United States in the recent years. The bar chart perfectly simplifies complex data for the human eye to simply see the amount of stress in different age categories. It simplified how depression varies in one lifetime in the most recent years. 
 
 ### Chart 2
 

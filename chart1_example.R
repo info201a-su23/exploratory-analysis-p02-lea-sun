@@ -1,15 +1,15 @@
 library(ggplot2)
 library(dplyr)
 
-Country <- c("United States", "Afghanistan")
-Prevalence <- c(3.098053, 4.424521)
+Ages <- c("10 to 14 yr olds", "30 to 34 yr olds", "70 yr olds")
+Prevalence <- c(2.698861, 6.201451 ,3.815748)
 
-data <- data.frame(Country = Country, Prevalence = Prevalence)
+data <- data.frame(Ages = Ages, Prevalence = Prevalence)
 
-chart1 <- ggplot(data, aes(x = Country, y = Prevalence, fill = Country, colour = Country )) +
+chart1 <- ggplot(data, aes(x = Ages, y = Prevalence, fill = Ages, colour = Ages )) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(x = "Country", y = "Prevalence of Depression (%)") +
-  ggtitle("Comparison of Depression of the two Countries by age group 20-24 years") +
+  labs(x = "Ages", y = "Prevalence of Depression (%)") +
+  ggtitle("The difference of depression rates between age groups in the United States (2017)") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
